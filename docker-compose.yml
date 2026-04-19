@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: portfolio-frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    # If you have environment variables in frontend, you can use env_file:
+    # env_file:
+    #   - ./frontend/.env
